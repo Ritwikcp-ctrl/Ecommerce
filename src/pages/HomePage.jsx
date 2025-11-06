@@ -4,6 +4,7 @@
   export function HomePage() {
     return (
 <>
+<title>Ecommerce Project</title>
             <div className="handkart-header">
       <div className="handkart-left-section">
         <a href="handKart.html" className="header-link">
@@ -62,7 +63,7 @@
 
           <div className="product-quantity-container">
             <select>
-              <option selected value="1">1</option>
+              <option  value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
