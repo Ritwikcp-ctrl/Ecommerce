@@ -11,7 +11,7 @@ import './checkout-header.css'
 <div className="checkout-header">
       <div className="header-content">
         <div className="checkout-header-left-section">
-          <a href="amazon.html">
+          <a href="/">
             <img className="amazon-logo" src="images/handkart-logo.png"></img>
             <img className="amazon-mobile-logo" src="images/handkart-mobile-logo.png"></img>
           </a>
@@ -22,7 +22,7 @@ import './checkout-header.css'
 {/* first part */}
          <div className="checkout-header-middle-section">
           Checkout (<a className="return-to-home-link"
-            href="amazon.html">3 items</a>)
+            href="/">3 items</a>)
         </div> 
 
 {/* Second part */}
