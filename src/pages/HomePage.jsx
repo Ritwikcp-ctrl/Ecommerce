@@ -1,12 +1,14 @@
   import './header.css';
   import './HomePage.css';
+  import {products} from './Data/products.js';
   
   export function HomePage() {
     return (
 <>
-<title>Ecommerce Project</title>
-            <div className="handkart-header">
-      <div className="handkart-left-section">
+    <title>Ecommerce Project</title>
+
+       <div className="handkart-header">
+        <div className="handkart-left-section">
         <a href="handKart.html" className="header-link">
           <img className="handkart-logo"
             src="images/handkart-logo-white.png"></img>
@@ -40,7 +42,61 @@
     
            <div className="main">
       <div className="products-grid">
-        <div className="product-container">
+
+
+        {products.map((product)=>{
+          return (
+              <div key={product.id}className="product-container">
+          <div className="product-image-container">
+               <img className='product-image 'src={product.image} alt="" />           
+          </div>
+
+          <div className="product-name limit-text-to-2-lines">
+            {product.name}
+          </div>
+
+          <div className="product-rating-container">
+            <img className="product-rating-stars"
+              src={`images/ratings/rating-${product.rating.stars*10}.png`}></img>
+            <div className="product-rating-count link-primary">
+              {product.rating.count}
+            </div>
+          </div>
+
+          <div className="product-price">
+            ${(product.priceCents  /100).toFixed(2)}
+          </div>
+
+          <div className="product-quantity-container">
+            <select>
+              <option  value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+
+          <div className="product-spacer"></div>
+
+          <div className="added-to-cart">
+            <img src="images/icons/checkmark.png"></img>
+            Added
+          </div>
+
+          <button className="add-to-cart-button button-primary">
+            Add to Cart
+          </button>
+        </div>
+          );
+        })}
+
+        {/* <div className="product-container">
           <div className="product-image-container">
                <img className='product-image 'src="images/products/athletic-cotton-socks-6-pairs.jpg" alt="" />           
           </div>
@@ -86,7 +142,8 @@
           <button className="add-to-cart-button button-primary">
             Add to Cart
           </button>
-        </div>
+        </div> */}
+
 
         <div className="product-container">
           <div className="product-image-container">
@@ -137,6 +194,7 @@
           </button>
         </div>
 
+
         <div className="product-container">
           <div className="product-image-container">
             <img className="product-image"
@@ -185,8 +243,9 @@
             Add to Cart
           </button>
         </div>
+
          </div>
-             </div>
+       </div>
           
       </>
  
